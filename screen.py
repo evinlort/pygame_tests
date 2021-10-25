@@ -15,6 +15,9 @@ prev_key = None
 
 def update_colors(key):
     global prev_key
+    if prev_key == key and key == keyboard.Key.esc:
+        lst.stop()
+        pygame.quit()
     if prev_key == key:
         pygame.display.flip()
         return
